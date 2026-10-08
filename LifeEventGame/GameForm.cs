@@ -85,10 +85,11 @@ namespace LifeEventGame
             if (sender is Button btn && btn.Tag is int idx && idx < _currentOptions.Count)
             {
                 var ev = _currentOptions[idx];
-                // Display description - user can replace with game logic
                 MessageBox.Show(ev.Description, ev.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _descriptionLabel.Text = $"Last choice: {ev.Title}";
-                // After choosing, get new options
+
+                // After choosing, update player attributes and get new options
+                ev.UpdatePlayerAttributes(_playerAttributes);
                 RefreshOptions();
             }
         }
