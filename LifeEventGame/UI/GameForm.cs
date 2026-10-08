@@ -43,16 +43,6 @@ namespace LifeEventGame.UI
                 Size = new Size(320, 40)
             };
             Controls.Add(_descriptionLabel);
-
-            _refreshButton = new Button
-            {
-                Text = "New Options",
-                Size = new Size(100, 30),
-                Location = new Point(250, 180)
-            };
-            _refreshButton.Click += RefreshButton_Click;
-            Controls.Add(_refreshButton);
-
             Load += GameForm_Load;
         }
 
@@ -94,11 +84,6 @@ namespace LifeEventGame.UI
                 ev.UpdatePlayerAttributes(_playerAttributes);
                 RefreshOptions();
             }
-        }
-
-        private void RefreshButton_Click(object? sender, EventArgs e)
-        {
-            RefreshOptions();
         }
     }
 }

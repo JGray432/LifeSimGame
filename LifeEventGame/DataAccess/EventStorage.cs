@@ -1,9 +1,4 @@
 ﻿using LifeEventGame.StandardObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LifeEventGame.DataAccess
 {
@@ -15,14 +10,24 @@ namespace LifeEventGame.DataAccess
             PopulateEvents();            
         }
 
+        /// <summary>
+        /// Populates the Events list with predefined LifeEvent instances.
+        /// Longer term will be replaced by a database population.
+        /// LifeEvent arguments are: Title, Description, Attributes for event to appear, and AttributeChanges to apply to the player when the event occurs.
+        /// </summary>
         public void PopulateEvents()
         {
-            Events.Add(new LifeEvent("Find Treasure", "You discover a hidden cache of gold."));
-            Events.Add(new LifeEvent("Lose Job", "You are laid off from your job."));
-            Events.Add(new LifeEvent("New Friendship", "You meet a new friend."));
-            Events.Add(new LifeEvent("Promotion", "You receive a promotion at work."));
-            Events.Add(new LifeEvent("Sickness", "You fall ill and must rest."));
-            Events.Add(new LifeEvent("Lucky Windfall", "A distant relative leaves you an inheritance."));
+            Events.Add(new LifeEvent("Find Treasure", "You discover a hidden cache of gold.", 
+                new PlayerAttributes() { Fitness = new PlayerAttribute(6)}, 
+                new PlayerAttributes()));
+            Events.Add(new LifeEvent("Lose Job", "You are laid off from your job.", 
+                new PlayerAttributes(), 
+                new PlayerAttributes()));
+            Events.Add(new LifeEvent("New Friendship", "You meet a new friend.", 
+                new PlayerAttributes(), new PlayerAttributes()));
+            Events.Add(new LifeEvent("Promotion", "You receive a promotion at work.", new PlayerAttributes(), new PlayerAttributes()));
+            Events.Add(new LifeEvent("Sickness", "You fall ill and must rest.", new PlayerAttributes(), new PlayerAttributes()));
+            Events.Add(new LifeEvent("Lucky Windfall", "A distant relative leaves you an inheritance.", new PlayerAttributes(), new PlayerAttributes()));
         }
     }
 }

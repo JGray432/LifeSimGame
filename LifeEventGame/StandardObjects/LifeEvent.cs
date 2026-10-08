@@ -8,20 +8,26 @@ namespace LifeEventGame.StandardObjects
         public decimal Weight { get; set; }
         public decimal Probability { get; set; }
 
-        public PlayerAttributes RequiredAttributes { get; set; }
-        public PlayerAttributes AttributeChanges { get; set; }
+        public PlayerAttributes Attributes { get; set; } // Value = prob is maximised when player attribute is equal; Min/Max = required settings to have non-zero prob
+        public PlayerAttributes AttributeChanges { get; set; } // Value = change to player attribute;
 
-        public LifeEvent(string title, string description)
+        public LifeEvent(string title, string description, PlayerAttributes attributes, PlayerAttributes attributeChanges)
         {
             Title = title;
             Description = description;
+            Attributes = attributes;
+            AttributeChanges = attributeChanges;
         }
 
         public PlayerAttributes UpdatePlayerAttributes(PlayerAttributes currentPlayer)
         {
-            foreach (var attribute in AttributeChanges.ToList())
+            var attributeChangesList = AttributeChanges.ToList();
+            var currentPlayerList = currentPlayer.ToList();
+            for (int i = 0; i < attributeChangesList.Count; i++)
             {
-                var currentAttribute = currentPlayer.ToList().Find(a => a.Name == attribute.Name);
+                var attribute = attributeChangesList[i];
+                var currentAttribute = currentPlayerList[i];
+
                 if (currentAttribute != null)
                 {
                     currentAttribute.Value += attribute.Value;

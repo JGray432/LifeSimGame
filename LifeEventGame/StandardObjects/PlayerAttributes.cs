@@ -1,10 +1,10 @@
 ﻿namespace LifeEventGame.StandardObjects
 {
     public class PlayerAttributes
-    {
-        public List<Attribute> ToList()
+    {        
+        public List<PlayerAttribute> ToList()
         {
-            return new List<Attribute>
+            return new List<PlayerAttribute>
             {
                 Fitness,
                 Education,
@@ -15,12 +15,12 @@
                 Creativity
             };
         }
-        public Attribute Fitness = new Attribute("Fitness", 5);
-        public Attribute Education = new Attribute("Education", 5);
-        public Attribute Promiscuity = new Attribute("Promiscuity", 5);
-        public Attribute Addiction = new Attribute("Addiction", 5);
-        public Attribute Authenticity = new Attribute("Authenticity", 5);
-        public Attribute Attractiveness = new Attribute("Attractiveness", 5);
-        public Attribute Creativity = new Attribute("Creativity", 5);
+        public PlayerAttribute Fitness = new PlayerAttribute(5);
+        public PlayerAttribute Education = new PlayerAttribute(5);
+        public PlayerAttribute Promiscuity = new PlayerAttribute(5);
+        public PlayerAttribute Addiction = new PlayerAttribute(5);
+        public PlayerAttribute Authenticity = new PlayerAttribute(5);
+        public PlayerAttribute Attractiveness = new PlayerAttribute(5);
+        public PlayerAttribute Creativity = new PlayerAttribute(5);
     }
 }

@@ -57,7 +57,7 @@ namespace LifeEventGame.Helpers
 
             foreach (var ev in events)
             {
-                ev.Weight /= weightSum;
+                ev.Probability = ev.Weight / weightSum;
             }
         }
 
