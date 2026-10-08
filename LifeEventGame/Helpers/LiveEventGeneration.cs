@@ -50,7 +50,7 @@ namespace LifeEventGame.Helpers
             decimal weightSum = 0;
             foreach (var ev in events)
             {
-                var prob = 0.5m; // To be replaced by actual logic
+                var prob = AssignEventProbToCurrentPlayer(ev, playerAttributes); 
                 ev.Weight = prob;
                 weightSum += prob;
             }
@@ -59,6 +59,13 @@ namespace LifeEventGame.Helpers
             {
                 ev.Probability = ev.Weight / weightSum;
             }
+        }
+
+        private decimal AssignEventProbToCurrentPlayer(LifeEvent lifeEvent, PlayerAttributes playerAttributes)
+        {
+            // Need higher prob awarded to closer value attributes
+            // Skip attributes assigned -1 (not applicable)
+            return 0.5m;
         }
 
         private int GetEventIndexFromProb(List<LifeEvent> events, decimal rand)

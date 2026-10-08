@@ -12,9 +12,11 @@
                 Addiction,
                 Authenticity,
                 Attractiveness,
-                Creativity
+                Creativity,
+                PoliticalInterest
             };
         }
+        public int Day { get; set; } = 0;
         public PlayerAttribute Fitness = new PlayerAttribute(5);
         public PlayerAttribute Education = new PlayerAttribute(5);
         public PlayerAttribute Promiscuity = new PlayerAttribute(5);
@@ -22,5 +24,7 @@
         public PlayerAttribute Authenticity = new PlayerAttribute(5);
         public PlayerAttribute Attractiveness = new PlayerAttribute(5);
         public PlayerAttribute Creativity = new PlayerAttribute(5);
+        public PlayerAttribute PoliticalInterest = new PlayerAttribute(5);
+
     }
 }
