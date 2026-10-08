@@ -1,5 +1,4 @@
-using System;
-using System.Windows.Forms;
+using LifeEventGame.UI;
 
 namespace LifeEventGame
 {

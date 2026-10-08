@@ -1,4 +1,4 @@
-namespace LifeEventGame
+namespace LifeEventGame.StandardObjects
 {
     public class LifeEvent
     {

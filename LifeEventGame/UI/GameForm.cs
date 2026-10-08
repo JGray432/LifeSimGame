@@ -1,14 +1,16 @@
+using LifeEventGame.Helpers;
+using LifeEventGame.StandardObjects;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace LifeEventGame
+namespace LifeEventGame.UI
 {
     public class GameForm : Form
     {
         private readonly Button[] _optionButtons = new Button[3];
-        private readonly GameEngine _engine;
+        private readonly LiveEventGeneration _engine;
         private readonly Label _descriptionLabel;
         private readonly Button _refreshButton;
         private readonly PlayerAttributes _playerAttributes = new PlayerAttributes();
@@ -18,7 +20,7 @@ namespace LifeEventGame
             Text = "Life Event Game";
             Size = new Size(400, 250);
             StartPosition = FormStartPosition.CenterScreen;
-            _engine = new GameEngine();
+            _engine = new LiveEventGeneration();
 
             // Create buttons
             for (int i = 0; i < 3; i++)

@@ -1,10 +1,12 @@
+using LifeEventGame.DataAccess;
+using LifeEventGame.StandardObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LifeEventGame
+namespace LifeEventGame.Helpers
 {
-    public class GameEngine
+    public class LiveEventGeneration
     {
         private readonly Random _random = new Random();
         private readonly EventStorage _eventStorage = new EventStorage();

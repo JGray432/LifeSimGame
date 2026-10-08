@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LifeEventGame
+namespace LifeEventGame.StandardObjects
 {
     public class Attribute
     {
