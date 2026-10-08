@@ -11,6 +11,7 @@ namespace LifeEventGame
         private readonly GameEngine _engine;
         private readonly Label _descriptionLabel;
         private readonly Button _refreshButton;
+        private readonly PlayerAttributes _playerAttributes = new PlayerAttributes();
 
         public GameForm()
         {
@@ -62,7 +63,7 @@ namespace LifeEventGame
 
         private void RefreshOptions()
         {
-            _currentOptions = _engine.GetRandomEvents(3);
+            _currentOptions = _engine.GetRandomEvents(3, _playerAttributes);
             for (int i = 0; i < 3; i++)
             {
                 if (i < _currentOptions.Count)
